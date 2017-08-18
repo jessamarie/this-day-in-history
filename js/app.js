@@ -34,14 +34,20 @@ function factService ($http, $sce) {
   }
 
   function get () {
-    $http.jsonp(trustedUrl, {jsonpCallbackParam: 'callback'})
-      .success(function (data) {
-        console.log(data)
-        return data
-      })
-    .error(function (data) {
-      console.log('failure')
+    $http.jsonp(url + '/8/12' + '?callback=JSON_CALLBACK')
+    .success(function (data) {
+      console.log('SUCCESS!')
+      console.log(data)
+      return data.found
     })
+    // $http.jsonp(trustedUrl, {jsonpCallbackParam: 'callback'})
+    //   .success(function (data) {
+    //     console.log(data)
+    //     return data
+    //   })
+    // .error(function (data) {
+    //   console.log('failure')
+    // })
   }
   //   $http({
   //     url: $sce.trustAsResourceUrl(url),
