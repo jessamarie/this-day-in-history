@@ -10,10 +10,10 @@
 
   function Router ($stateProvider) {
     $stateProvider
-      .state('factShow', {
-        url: '/facts/:month/:day',
+      .state('momentShow', {
+        url: '/date/:month/:day',
         templateUrl: 'js/moments/ng-views/show.html',
-        controller: 'FactShowController',
+        controller: 'MomentShowController',
         controllerAs: 'vm'
       })
   }

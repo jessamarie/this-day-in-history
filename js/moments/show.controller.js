@@ -3,15 +3,15 @@
 (function () {
   angular
     .module('history')
-    .controller('FactShowController', [
-      'Fact',
+    .controller('MomentShowController', [
+      'Moment',
       '$stateParams',
-      FactShowController
+      MomentShowController
     ])
 
-  function FactShowController (Fact, $stateParams) {
+  function MomentShowController (Moment, $stateParams) {
     this.num = 5
-    this.fact = Fact.get($stateParams.month, $stateParams.day)
-    console.dir(this.fact)
+    this.moment = Moment.get($stateParams.month, $stateParams.day)
+    console.dir(this.moment)
   }
 })()

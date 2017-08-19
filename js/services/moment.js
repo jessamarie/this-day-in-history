@@ -3,12 +3,12 @@
 (function () {
   angular
     .module('history')
-    .factory('Fact', [
+    .factory('Moment', [
       '$resource',
-      factService
+      momentService
     ])
 
-  function factService ($resource) {
+  function momentService ($resource) {
     return {
       get: get
     }
