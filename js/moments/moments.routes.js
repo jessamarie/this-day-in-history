@@ -2,7 +2,7 @@
 
 (function () {
   angular
-    .module('history')
+    .module('moments.routes', [])
     .config([
       '$stateProvider',
       Router

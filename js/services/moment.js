@@ -9,7 +9,7 @@
 
 (function () {
   angular
-    .module('history')
+    .module('moments.service', [])
     .factory('Moment', [
       '$resource',
       momentService

@@ -2,8 +2,9 @@
 
 (function () {
   angular
-    .module('history', [
+    .module('historyApp', [
       'ui.router',
-      'ngResource'
+      'ngResource',
+      'moments'
     ])
 })()
