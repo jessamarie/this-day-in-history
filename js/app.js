@@ -20,57 +20,34 @@ angular
     FactShowControllerFunction
   ])
   .factory('Fact', [
-    '$http',
-    '$sce',
+    '$resource',
     factService
   ])
 
-function factService ($http, $sce) {
-  var url = 'http://history.muffinlabs.com/date'
-  var trustedUrl = $sce.trustAsResourceUrl(url)
-
+function factService ($resource) {
   return {
     get: get
   }
 
-  function get () {
-    $http.jsonp(url + '/8/12' + '?callback=JSON_CALLBACK')
-    .success(function (data) {
-      console.log('SUCCESS!')
-      console.log(data)
-      return data.found
+  function get (month, day) {
+    var url = 'http://history.muffinlabs.com/date/' + month + '/' + day
+
+    var resource = $resource(url, { callback: 'JSON_CALLBACK' }, {
+      getMoments: {
+        method: 'JSONP',
+        isArray: false
+      }
     })
-    // $http.jsonp(trustedUrl, {jsonpCallbackParam: 'callback'})
-    //   .success(function (data) {
-    //     console.log(data)
-    //     return data
-    //   })
-    // .error(function (data) {
-    //   console.log('failure')
-    // })
+
+    return resource.getMoments().$promise.then(
+        function (moments) {
+          return moments
+        },
+        function (error) {
+          console.log(error)
+        }
+      )
   }
-  //   $http({
-  //     url: $sce.trustAsResourceUrl(url),
-  //     method: 'JSONP'
-  //   }).then(
-  //  function (data) {
-  //    $scope.myData = data
-  //    console.log(data);
-  //  },
-  //  function (error) {
-  //     // manage error
-  //  }
-// )
-    // $http.jsonp(trustedUrl, {jsonpCallbackParam: 'callback'})
-    //     .success(function (data) {
-    //       console.log(data.found)
-    //     })
-//  }
-  // return $resource('http://history.muffinlabs.com/date', {}, {
-  //   jsonp_query: {
-  //     method: 'JSONP'
-  //   }
-  // })
 }
 
 function RouterFunction ($stateProvider) {
@@ -89,19 +66,9 @@ function RouterFunction ($stateProvider) {
   })
 }
 
-function FactIndexControllerFunction (Fact) {
-  // this.facts = Fact.query()
-  // console.log(this.facts)
-}
+function FactIndexControllerFunction (Fact) { }
 
 function FactShowControllerFunction (Fact, $stateParams) {
-  // this.fact = Fact.get({month: $stateParams.month, day: $stateParams.day })
-  // console.log(this.fact)
-
-  this.fact = Fact.get()
-
-  // Fact.getEvent().then(function (data) {
-  //   console.log('got data')
-  //   console.log(data)
-  // })
+  this.fact = Fact.get($stateParams.month, $stateParams.day)
+  console.log(this.fact)
 }
