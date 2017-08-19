@@ -10,8 +10,29 @@
     ])
 
   function MomentShowController (Moment, $stateParams) {
-    this.num = 5
-    this.moment = Moment.get($stateParams.month, $stateParams.day)
-    console.dir(this.moment)
+    this.date = {
+      month: $stateParams.month,
+      day: $stateParams.day
+    }
+    var self = this
+
+    loadMoments()
+
+    function loadMoments () {
+
+      // get all data for the specific date
+      Moment.get(self.date).$promise.then(
+          function (data) {
+            self.date = data.date
+            self.url = data.url
+            self.events = data.data.Events
+            self.births = data.data.Births
+            self.deaths = data.data.Deaths
+          },
+          function (error) {
+            console.log(error)
+          }
+        )
+    }
   }
 })()

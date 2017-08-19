@@ -1,5 +1,12 @@
 'use strict';
 
+/*
+  For our data we chose to use this API:
+  http://history.muffinlabs.com/
+
+  which is based off the information found on wikipedia
+*/
+
 (function () {
   angular
     .module('history')
@@ -9,28 +16,13 @@
     ])
 
   function momentService ($resource) {
-    return {
-      get: get
-    }
+    var url = 'http://history.muffinlabs.com/date/:month/:day'
 
-    function get (month, day) {
-      var url = 'http://history.muffinlabs.com/date/' + month + '/' + day
-
-      var resource = $resource(url, { callback: 'JSON_CALLBACK' }, {
-        getMoments: {
-          method: 'JSONP',
-          isArray: false
-        }
-      })
-
-      return resource.getMoments().$promise.then(
-          function (moments) {
-            return moments
-          },
-          function (error) {
-            console.log(error)
-          }
-        )
-    }
+    return $resource(url, { callback: 'JSON_CALLBACK' }, {
+      get: {
+        method: 'JSONP',
+        isArray: false
+      }
+    })
   }
 })()
