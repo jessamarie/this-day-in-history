@@ -13,5 +13,5 @@
 
 
 $(document).ready(function() {
-$('.imgContainer').delay(2000).fadeIn(500);
+$('.imgContainer').delay(1000).fadeIn(500);
 });
