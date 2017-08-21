@@ -20,6 +20,10 @@
     this.getRandomDate = function () {
       this.randomDate = new Date(this.start.getTime() + Math.random() * (this.date.getTime() - this.start.getTime()))
       console.log(this.randomDate)
+
+      this.year = this.randomDate.getFullYear()
+      this.day = this.randomDate.getDay()
+      this.month = this.randomDate.getMonth()
     }
 
       /* returns a date object with today's date */
