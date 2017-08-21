@@ -1,12 +1,2 @@
-<h1>Data</h1>
-
-<p>{{vm.date}}</p>
-<p>{{vm.url}}</p>
-
-<h2>Moments</h2>
-<h3>Events</h3>
-<pre>{{vm.events | json }}</pre>
-<h3>Births</h3>
-<pre>{{vm.births | json }}</pre>
-<h3>Deaths</h3>
-<pre>{{vm.deaths | json }}</pre>
+<h2>On {{vm.date}}, {{vm.randomEvent.year}} </h2>
+<h3>{{vm.randomEvent.text}}</h3>

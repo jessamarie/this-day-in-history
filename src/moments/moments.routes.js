@@ -11,7 +11,7 @@
   function Router ($stateProvider) {
     $stateProvider
       .state('momentShow', {
-        url: '/date/:month/:day',
+        url: '/date/:month/:day/:year',
         templateUrl: 'src/moments/ng-views/show.html',
         controller: 'MomentShowController',
         controllerAs: 'vm'
