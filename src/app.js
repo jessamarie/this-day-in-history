@@ -10,3 +10,8 @@
       'moments'
     ])
 })()
+
+
+$(document).ready(function() {
+$('.imgContainer').delay(2000).fadeIn(500);
+});
