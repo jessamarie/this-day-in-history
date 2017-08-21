@@ -12,7 +12,7 @@
     $stateProvider
       .state('home', {
         url: '',
-        templateUrl: 'js/home/ng-views/index.html',
+        templateUrl: 'app/home/ng-views/index.html',
         controller: 'HomeIndexController',
         controllerAs: 'vm'
       })
