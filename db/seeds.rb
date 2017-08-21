@@ -9,5 +9,5 @@
 
 
 
-Discussion.create(content: "Hello World", is_published: true)
-Discussion.create(content: "Hello World2", is_published: false)
+Discussion.create(year: "1994", month: "02", day: "20")
+Discussion.create(year: "1994", month: "09", day: "12")
