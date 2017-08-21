@@ -2,3 +2,7 @@
   background:red;
   color:white;
 }
+
+html{
+  text-transform: lowercase;
+}

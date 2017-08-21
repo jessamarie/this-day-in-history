@@ -1,0 +1,20 @@
+.showContainer{
+  display: flex;
+	align-items: center;
+	justify-content: center;
+  flex-direction: column;
+}
+
+#showDate{
+  display: none;
+}
+#showInfo{
+  width: 70%;
+  display: none;
+}
+
+#homebutton{
+  top: 15px;
+  left: 15px;
+  position: absolute;
+}

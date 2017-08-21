@@ -20,7 +20,7 @@ body {
 	margin-left: 25px;
 	margin-right: 25px;
 	padding-bottom: 6px;
-	border-bottom: 5px solid white;
+	border-bottom: 3px solid white;
   flex-grow: 1;
 }
 .imgContainer{
@@ -102,5 +102,5 @@ p{
 }
 
 .icon:hover {
-	border-bottom: 5px solid 	black;
+	border-bottom: 3px solid 	black;
 }

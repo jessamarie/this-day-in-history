@@ -13,5 +13,13 @@
 
 
 $(document).ready(function() {
-$('.imgContainer').delay(1000).fadeIn(500);
+$('.imgContainer').delay(1000).fadeIn(700);
+});
+
+$(document).ready(function() {
+$('#showDate').delay(1000).fadeIn(700);
+});
+
+$(document).ready(function() {
+$('#showInfo').delay(1000).fadeIn(700);
 });
