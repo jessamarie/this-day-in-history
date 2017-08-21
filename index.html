@@ -1,20 +1,41 @@
 <!DOCTYPE html>
-<html data-ng-app="history">
+<html data-ng-app="historyApp">
   <head>
     <title>Angular</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-resource.min.js"></script>
-
-    <script src="js/app.js"></script>
-    <script src="js/moments/moments.routes.js" charset="utf-8"></script>
-    <script src="js/moments/show.controller.js" charset="utf-8"></script>
-    <script src="js/services/moment.js" charset="utf-8"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-datepicker/2.1.23/angular-datepicker.css">
+    <script src="https://use.fontawesome.com/42cf8c2449.js"></script>
+    <link rel="stylesheet" href="/src/main.css">
+    <link rel="stylesheet" href="/src/home/home.css">
+    <link rel="stylesheet" href="/src/moments/moments.css">
 
   </head>
   <body>
+    <header>
     <h1><a data-ui-sref="momentShow">This Day In History</a></h1>
+    </header>
+
 
     <main data-ui-view></main>
+
+
+    <footer>Made by Jessa and Associates LLC</footer>
+
+
+    <!--  Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-resource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-datepicker/2.1.23/angular-datepicker.js" charset="utf-8"></script>
+
+    <script src="src/app.js"></script>
+    <script src="src/home/home.module.js" charset="utf-8"></script>
+    <script src="src/home/home.routes.js" charset="utf-8"></script>
+    <script src="src/home/index.controller.js" charset="utf-8"></script>
+
+    <script src="src/moments/moments.module.js" charset="utf-8"></script>
+    <script src="src/moments/moments.routes.js" charset="utf-8"></script>
+    <script src="src/moments/show.controller.js" charset="utf-8"></script>
+    <script src="src/services/moment.js" charset="utf-8"></script>
   </body>
 </html>

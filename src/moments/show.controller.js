@@ -2,7 +2,7 @@
 
 (function () {
   angular
-    .module('history')
+    .module('moments.controller.show', [])
     .controller('MomentShowController', [
       'Moment',
       '$stateParams',
@@ -19,7 +19,6 @@
     loadMoments()
 
     function loadMoments () {
-
       // get all data for the specific date
       Moment.get(self.date).$promise.then(
           function (data) {

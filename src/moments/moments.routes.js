@@ -2,7 +2,7 @@
 
 (function () {
   angular
-    .module('history')
+    .module('moments.routes', [])
     .config([
       '$stateProvider',
       Router
@@ -12,7 +12,7 @@
     $stateProvider
       .state('momentShow', {
         url: '/date/:month/:day',
-        templateUrl: 'js/moments/ng-views/show.html',
+        templateUrl: 'src/moments/ng-views/show.html',
         controller: 'MomentShowController',
         controllerAs: 'vm'
       })
