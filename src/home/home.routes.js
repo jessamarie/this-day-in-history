@@ -2,7 +2,7 @@
 
 (function () {
   angular
-    .module('moments.routes', [])
+    .module('home.routes', [])
     .config([
       '$stateProvider',
       Router
@@ -10,10 +10,10 @@
 
   function Router ($stateProvider) {
     $stateProvider
-      .state('momentShow', {
-        url: '/date/:month/:day',
-        templateUrl: 'js/moments/ng-views/show.html',
-        controller: 'MomentShowController',
+      .state('home', {
+        url: '',
+        templateUrl: 'src/home/ng-views/index.html',
+        controller: 'HomeIndexController',
         controllerAs: 'vm'
       })
   }
