@@ -27,9 +27,9 @@ body {
   display: flex;
 	align-items: center;
 	justify-content: center;
-  display: none;
   width: 100%;
   text-align: center;
+  display: none;
 }
 .reveal-text,
 .reveal-text::after {
@@ -102,5 +102,5 @@ p{
 }
 
 .icon:hover {
-	border-bottom: 5px solid black;
+	border-bottom: 5px solid 	black;
 }
