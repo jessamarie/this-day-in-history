@@ -22,8 +22,8 @@
       console.log(this.randomDate)
 
       this.year = this.randomDate.getFullYear()
-      this.day = this.randomDate.getDay()
-      this.month = this.randomDate.getMonth()
+      this.day = this.randomDate.getDay() + 1
+      this.month = this.randomDate.getMonth() + 1
     }
 
       /* returns a date object with today's date */
