@@ -7,11 +7,12 @@
       'ngResource',
       '720kb.datepicker',
       'home',
-      'moments'
+      'moments',
+      'shuffle',
+      'dateChecker.service'
     ])
 })()
 
-
-$(document).ready(function() {
-$('.imgContainer').delay(1000).fadeIn(700);
-});
+$(document).ready(function () {
+  $('.imgContainer').delay(1000).fadeIn(700)
+})
