@@ -2,10 +2,9 @@
 
 angular
   .module('discussions')
-  .controller('DiscussionIndexController', [
-    '_discussions',
-    DiscussionIndexController
-  ])
+  .controller('DiscussionIndexController', DiscussionIndexController)
+
+DiscussionIndexController.$inject = ['_discussions']
 
 function DiscussionIndexController (_discussions) {
   this.discussions = _discussions

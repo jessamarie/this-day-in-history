@@ -2,11 +2,9 @@
 
 angular
   .module('discussions')
-  .controller('DiscussionShowController', [
-    '$state',
-    '$stateParams',
-    DiscussionShowController
-  ])
+  .controller('DiscussionShowController', DiscussionShowController)
+
+DiscussionShowController.$inject = ['$state', '$stateParams']
 
 function DiscussionShowController () {
     // this.discussions = Discussion.query()
@@ -14,8 +12,9 @@ function DiscussionShowController () {
 
     // this.discussion = new Discussion()
 
-    // this.create = function () {
-    //   this.discussion.$save().then((res) => {
-    //     // $state.go('songsShow', { id: res.id })
-    //   })
+  this.create = function () {
+    this.discussion.$save().then((res) => {
+        // $state.go('songsShow', { id: res.id })
+    })
+  }
 }

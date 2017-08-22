@@ -2,10 +2,9 @@
 
 angular
     .module('discussions')
-    .config([
-      '$stateProvider',
-      Router
-    ])
+    .config(Router)
+
+Router.$inject = ['$stateProvider']
 
 function Router ($stateProvider) {
   $stateProvider
@@ -17,13 +16,10 @@ function Router ($stateProvider) {
         resolve: DiscussionIndexController.resolve
       })
       .state('discussionsShow', {
-        url: '/discussions/:id',
+        url: 'date/:day/:month/:year/discussions',
         templateUrl: 'app/src/discussions/ng-views/show.html',
         controller: 'DiscussionShowController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        resolve: DiscussionShowController.resolve
       })
 }
-
-  // function discussionsPrepService (Discussion) {
-  //   return Discussion.query()
-  // }
