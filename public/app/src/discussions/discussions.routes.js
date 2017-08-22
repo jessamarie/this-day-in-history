@@ -11,7 +11,7 @@
   function Router ($stateProvider) {
     $stateProvider
       .state('discussionShow', {
-        url: 'discussion/:id',
+        url: '/discussions/:id',
         templateUrl: 'app/src/discussions/ng-views/show.html',
         controller: 'DiscussionShowController',
         controllerAs: 'vm'

@@ -11,6 +11,6 @@
     ])
 
   function DiscussionShowController () {
-
+    this.message = "Hi I'm a message"
   }
 })()
