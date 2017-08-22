@@ -10,10 +10,18 @@ html{
 .viewContainer {
 	display: flex;
 	align-items: center;
-	justify-content: center;
   background:white;
 	flex-direction: column;
   font-family: 'Poppins', sans-serif;
 	height: 80vh;
+  margin: 0px;
+}
+
+.showContainer{
+  display: flex;
+	align-items: center;
+  justify-content: center;
+}
+body{
   margin: 0px;
 }

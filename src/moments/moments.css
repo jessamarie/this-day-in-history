@@ -6,10 +6,20 @@
 }
 
 #showDate{
+  height: 10vh;
+  margin: 0px;
+  padding: 10px;
 }
 #showInfo{
   width: 50vw;
   text-align: center;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  margin: 0px;
+  padding: 10px;
 }
 
 #homebutton{
@@ -24,20 +34,19 @@
 	justify-content: center;
   text-align: center;
   flex-direction: row;
-  height: 25%;
+  height: 30vh;
+  padding: 10px;
 }
 
 #showContainer{
-  height: 50vh;
+  height: 80vh;
   width: 50vw;
 }
 
 nav{
-  margin-top: 50px;
-  margin-left: 50px;
   text-decoration: underline;
   text-decoration-color: white;
-
+  height: 20vh;
 }
 
 #icon4{
