@@ -8,7 +8,7 @@
       '720kb.datepicker',
       'home',
       'moments',
-      'discussion',
+      'discussions',
       'shuffle',
       'dateChecker.service'
     ])

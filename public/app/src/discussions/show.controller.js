@@ -1,18 +1,21 @@
-(function () {
-  'use strict'
+'use strict'
 
-  angular
-    .module('discussion.controller.show', [])
-    .controller('DiscussionShowController', [
-      'Discussion',
-      '$state',
-      '$stateParams',
-      DiscussionShowController
-    ])
+angular
+  .module('discussions')
+  .controller('DiscussionShowController', [
+    '$state',
+    '$stateParams',
+    DiscussionShowController
+  ])
 
-  function DiscussionShowController (Discussion) {
-    this.message = Discussion.query()
-    console.log(this.message)
-    // this.message = "Hi I'm a message"
-  }
-})()
+function DiscussionShowController () {
+    // this.discussions = Discussion.query()
+    // console.log(this.discussions)
+
+    // this.discussion = new Discussion()
+
+    // this.create = function () {
+    //   this.discussion.$save().then((res) => {
+    //     // $state.go('songsShow', { id: res.id })
+    //   })
+}

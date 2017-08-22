@@ -1,20 +1,20 @@
-(function () {
-  'use strict'
+'use strict'
 
-  angular
-    .module('discussion.routes', [])
+angular
+    .module('discussions')
     .config([
       '$stateProvider',
       Router
     ])
 
-  function Router ($stateProvider) {
-    $stateProvider
+function Router ($stateProvider) {
+  $stateProvider
       .state('discussionsIndex', {
         url: '/discussions',
         templateUrl: 'app/src/discussions/ng-views/index.html',
         controller: 'DiscussionIndexController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        resolve: DiscussionIndexController.resolve
       })
       .state('discussionsShow', {
         url: '/discussions/:id',
@@ -22,5 +22,8 @@
         controller: 'DiscussionShowController',
         controllerAs: 'vm'
       })
-  }
-})()
+}
+
+  // function discussionsPrepService (Discussion) {
+  //   return Discussion.query()
+  // }
