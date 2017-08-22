@@ -17,9 +17,8 @@
     }
 
     this.year = $stateParams.year
-    var self = this
 
-    loadMoments()
+    loadMoments(this)
 
     this.filterByYear = function (object) {
       return object.filter((item) => { return item.year === this.year.toString() })
@@ -29,7 +28,7 @@
       contains functions needed after a
       promise is resolved
      */
-    function loadMoments () {
+    function loadMoments (self) {
       // get all data for the specific date
       return Moment.get(self.dateParams).$promise.then(
           function (data) {
@@ -40,14 +39,9 @@
             self.deaths = self.filterByYear(data.data.Deaths)
 
             self.isEmpty = function (obj) {
-              return angular.equals(self.events, [])
+              return angular.equals(obj, [])
             }
 
-            self.getRandomDate = function () {
-              var now = new Date()
-              var start = (new Date(1900, 0, 0))
-              return new Date(start.getTime() + Math.random() * (now.getTime() - start.getTime()))
-            }
             /* sets a random event that occured on this day */
             self.getRandomEvent = function () {
               if (!self.isEmpty(self.events)) {
@@ -57,15 +51,7 @@
               } else if (!self.isEmpty(self.deaths)) {
                 self.randomEvent = self.deaths[Math.floor(Math.random() * self.deaths.length)]
               } else {
-                var randomDate = self.getRandomDate()
-
-                var y = randomDate.getFullYear()
-                var d = randomDate.getDay() + 1
-                var m = randomDate.getMonth() + 1
-
-                $state.go('momentShow', { month: m, day: d, year: y })
-                  // text: 'Sorry, this day was way boring. Try again!',
-                  // year: self.year
+                console.log('There shoud be sth here')
               }
             } // end get random event
             self.getRandomEvent()
