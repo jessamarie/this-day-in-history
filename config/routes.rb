@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     end
   end
 
-  #//root to: 'home#index'
+root to: 'home#index'
 
-  #match '*path' => 'home#index', via: :get
+match '*path' => 'home#index', via: :get
 end
