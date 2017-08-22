@@ -6,7 +6,7 @@ angular
 ])
 
 function Discussion($resource) {
-  return $resource('http://localhost:3000/api/discussion/:id', {}, {
+  return $resource('http://localhost:3000/api/discussions/:id', {}, {
     update: { method: 'PUT' }
   })
 }

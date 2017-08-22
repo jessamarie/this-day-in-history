@@ -10,7 +10,9 @@
       DiscussionShowController
     ])
 
-  function DiscussionShowController () {
-    this.message = "Hi I'm a message"
+  function DiscussionShowController (Discussion) {
+    this.message = Discussion.query()
+    console.log(this.message)
+    // this.message = "Hi I'm a message"
   }
 })()
