@@ -1,5 +1,5 @@
 angular
-.module('discussion.service')
+.module('discussion.service', [])
 .factory('Discussion', [
   '$resource',
   Discussion
