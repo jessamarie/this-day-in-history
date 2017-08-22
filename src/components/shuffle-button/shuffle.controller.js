@@ -38,7 +38,7 @@
       dateChecker.check(this.randomDate).then(
           function (eventsExist) {
             if (eventsExist === false) {
-              self.getRandomDate()
+              self.shuffle()
             } else {
               $state.go('momentShow', self.randomDate)
             }

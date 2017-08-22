@@ -4,16 +4,6 @@
 	--iterations: 1;
 }
 
-body {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
-  background:white;
-	flex-direction: column;
-  font-family: 'Poppins', sans-serif;
-}
-
 .icon{
 	height: 60px;
 	width: 60px;
@@ -30,6 +20,7 @@ body {
   width: 100%;
   text-align: center;
   display: none;
+	flex-direction: row;
 }
 .reveal-text,
 .reveal-text::after {

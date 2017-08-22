@@ -6,15 +6,41 @@
 }
 
 #showDate{
-  display: none;
 }
 #showInfo{
-  width: 70%;
-  display: none;
+  width: 50vw;
+  text-align: center;
 }
 
 #homebutton{
   top: 15px;
   left: 15px;
   position: absolute;
+}
+
+.imgContainerQuick{
+  display: flex;
+	align-items: center;
+	justify-content: center;
+  text-align: center;
+  flex-direction: row;
+  height: 25%;
+}
+
+#showContainer{
+  height: 50vh;
+  width: 50vw;
+}
+
+nav{
+  margin-top: 50px;
+  margin-left: 50px;
+  text-decoration: underline;
+  text-decoration-color: white;
+
+}
+
+#icon4{
+  height: 55px;
+  width: 55px;
 }
