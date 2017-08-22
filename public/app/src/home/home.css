@@ -14,13 +14,9 @@
   flex-grow: 1;
 }
 .imgContainer{
-  display: flex;
-	align-items: center;
-	justify-content: center;
-  width: 100%;
-  text-align: center;
-  display: none;
+	display: flex;
 	flex-direction: row;
+  display: none;
 }
 .reveal-text,
 .reveal-text::after {
