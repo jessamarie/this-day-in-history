@@ -14,5 +14,5 @@ angular
 commentService.$inject = ['$resource']
 
 function commentService ($resource) {
-  return $resource('http://localhost:3000/api/discussions/:discussion_id/comments')
+  return $resource(`${api_route}/api/discussions/:discussion_id/comments`)
 }
