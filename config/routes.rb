@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   scope :api do
     resources :discussions, except: [:new, :edit, :show] do
-      resources :comments
+      resources :comments, only: [:create]
     end
 
     get 'discussions/:month/:day/:year' => 'discussions#show'
