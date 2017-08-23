@@ -15,5 +15,5 @@ function Router ($stateProvider, $urlRouterProvider, $locationProvider) {
         controller: 'HomeIndexController',
         controllerAs: 'vm'
       })
-  // $urlRouterProvider.otherwise('')
+  $urlRouterProvider.otherwise('')
 }
