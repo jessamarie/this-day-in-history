@@ -4,27 +4,33 @@ angular
   .module('discussions')
   .controller('DiscussionShowController', DiscussionShowController)
 
-DiscussionShowController.$inject = ['$state', '$stateParams', '_discussion', '_moments']
+DiscussionShowController.$inject = ['$state', '$stateParams', 'Discussion', '_discussion', '_moments']
 
-function DiscussionShowController ($state, $stateParams, _discussion, _moments) {
+function DiscussionShowController ($state, $stateParams, Discussion, _discussion, _moments) {
   this.date = $stateParams
   this.discussion = _discussion
-  this.moments = _moments
-  console.log(this.moments)
   console.log(this.discussion)
-  if (this.discussions === null) {
-    this.create()
-  }
-    // this.discussions = Discussion.query()
-    // console.log(this.discussions)
-
-  // this.discussion = new Discussion()
+  this.moments = _moments
+  this.isEmpty = isEmpty
+  this.eventsExist = !this.isEmpty(this.moments.events) ||
+                     !this.isEmpty(this.moments.births) ||
+                     !this.isEmpty(this.moments.deaths)
 
   this.create = function () {
-    this.discussion.$save(this.date).then((res) => {
+    var discussion = new Discussion(this.date)
+
+    discussion.$save().then((res) => {
       $state.go('discussionsShow', this.date)
     })
   }
+
+  if (angular.equals(this.discussion, {})) {
+    this.create()
+  }
+}
+
+function isEmpty (obj) {
+  return angular.equals(obj, [])
 }
 
 /*
@@ -35,8 +41,6 @@ function DiscussionShowController ($state, $stateParams, _discussion, _moments) 
 DiscussionShowController.resolve = {
   _discussion: function (Discussion, $stateParams) {
     var date = $stateParams
-    var data = Discussion.get(date)
-    console.log(data)
     return Discussion.get(date)
   },
 
