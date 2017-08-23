@@ -18,14 +18,7 @@ class DiscussionsController < ApplicationController
 
   #show
   def show
-    # @discussion = Discussion.find(params[:id])
-    puts '***********'
-    puts params
-    puts '***********'
-    @discussion = Discussion.find_by(day: params[:day], year: params[:year], month: params[:month])
-    puts @discussion
-    puts '***********'
-
+    @discussion = Discussion.find_or_create_by(day: params[:day], year: params[:year], month: params[:month])
     render json: @discussion, include: :comments
   end
 

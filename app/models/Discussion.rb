@@ -1,4 +1,4 @@
 class Discussion < ApplicationRecord
   has_many :comments
-  validates_uniqueness_of :year, scope: [:month, :day]
+  validates :year, uniqueness: { scope: [:month, :day] }
 end
