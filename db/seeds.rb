@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-
-
-Discussion.create(year: "1994", month: "02", day: "20")
-Discussion.create(year: "1994", month: "09", day: "12")
+Comment.destroy_all
+Discussion.destroy_all
+patricks_bday = Discussion.create!(year: "1994", month: "2", day: "20")
+patricks_bday.comments.create!(text: 'No, this is Patrick')
+jessas_bday = Discussion.create!(year: "1994", month: "9", day: "12")
+jessas_bday.comments.create(text: 'This is the best day ever!!!')

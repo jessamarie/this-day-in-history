@@ -12,7 +12,6 @@
 
   function MomentShowController (Moment, $state, $stateParams) {
     this.dateParams = $stateParams
-    console.log(this.dateParams);
     this.queryDateParams = {
       month: $stateParams.month,
       day: $stateParams.day

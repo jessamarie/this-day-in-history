@@ -16,7 +16,7 @@ function Router ($stateProvider) {
         resolve: DiscussionIndexController.resolve
       })
       .state('discussionsShow', {
-        url: 'date/:day/:month/:year/discussions',
+        url: '/date/:month/:day/:year/discussions',
         templateUrl: 'app/src/discussions/ng-views/show.html',
         controller: 'DiscussionShowController',
         controllerAs: 'vm',

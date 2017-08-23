@@ -2,7 +2,7 @@ class DiscussionsController < ApplicationController
   # index
   def index
     @discussions = Discussion.all
-    render json: @discussions, include: [:comments]
+    render json: @discussions, include: :comments
   end
 
   # # new
@@ -18,8 +18,15 @@ class DiscussionsController < ApplicationController
 
   #show
   def show
-    @discussion = Discussion.find(params[:id])
-    render json: @discussion, include: [:comments]
+    # @discussion = Discussion.find(params[:id])
+    puts '***********'
+    puts params
+    puts '***********'
+    @discussion = Discussion.find_by(day: params[:day], year: params[:year], month: params[:month])
+    puts @discussion
+    puts '***********'
+
+    render json: @discussion, include: :comments
   end
 
   # # edit
@@ -46,6 +53,6 @@ class DiscussionsController < ApplicationController
 
   private
   def discussion_params
-    params.require(:discussion).permit(:content, :is_published)
+    params.require(:discussion).permit(:date, :year, :month, :id)
   end
 end
