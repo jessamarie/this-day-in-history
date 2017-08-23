@@ -1,25 +1,35 @@
-<div ng-show="vm.eventsExist">
-  <div ng-repeat="event in vm.moments.events">
-  <h2>Event: {{event.text}}</h2>
+<div class="viewContainer">
+  <div ng-show="vm.eventsExist">
+    <div ng-repeat="event in vm.moments.events">
+    <h2>Event: {{event.text}}</h2>
+    </div>
+
+    <div ng-repeat="event in vm.moments.births">
+    <h2>Birth: {{event.text}}</h2>
+    </div>
+
+    <div ng-repeat="event in vm.moments.deaths">
+    <h2>Death: {{event.text}}</h2>
+    </div>
+
+    <h3>Comments</h3>
+
+    <div ng-repeat="comment in vm.discussion.comments">
+      <h2>{{comment.text}}</h2>
+    </div>
   </div>
 
-  <div ng-repeat="event in vm.moments.births">
-  <h2>Birth: {{event.text}}</h2>
+  <div ng-show="!vm.eventsExist">
+    Nothing significant happened on this date, Sorry!
   </div>
 
-  <div ng-repeat="event in vm.moments.deaths">
-  <h2>Death: {{event.text}}</h2>
+  <button type="button" name="button" ng-click="vm.newComment()">New Comment</button>
+
+  <div class= "imgContainer" >
+    <img ng-click="" class ="icon" id="icon1" src= "http://i.imgur.com/78SxM9U.png" alt="">
+    <shuffle></shuffle>
+    <img data-ui-sref="discussionsIndex" ng-click="" class ="icon" id="icon3" src="http://i.imgur.com/HEySeBM.jpg" alt="">
+  </div>
   </div>
 
-  <h3>Comments</h3>
-
-  <div ng-repeat="comment in vm.discussion.comments">
-    <h2>{{comment.text}}</h2>
-  </div>
 </div>
-
-<div ng-show="!vm.eventsExist">
-  Nothing significant happened on this date, Sorry!
-</div>
-
-<button type="button" name="button" ng-click="vm.newComment()">New Comment</button>
