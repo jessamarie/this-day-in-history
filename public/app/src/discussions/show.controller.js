@@ -4,28 +4,28 @@ angular
   .module('discussions')
   .controller('DiscussionShowController', DiscussionShowController)
 
-DiscussionShowController.$inject = ['$state', '$stateParams', '_discussion', '_moments']
+DiscussionShowController.$inject = ['$state', '$stateParams', '_discussion', '_moments', 'Comment']
 
-function DiscussionShowController ($state, $stateParams, _discussion, _moments) {
-  this.date = $stateParams
+function DiscussionShowController ($state, $stateParams, _discussion, _moments, Comment) {
+  this.comment = new Comment()
   this.discussion = _discussion
   this.moments = _moments
   this.isEmpty = isEmpty
   this.eventsExist = !this.isEmpty(this.moments.events) ||
-                     !this.isEmpty(this.moments.births) ||
-                     !this.isEmpty(this.moments.deaths)
+  !this.isEmpty(this.moments.births) || !this.isEmpty(this.moments.deaths)
 
-  this.newComment = function () {
-    let params = {
-      discussion_id: _discussion.id,
-      month: $stateParams.month,
-      day: $stateParams.day,
-      year: $stateParams.year
-    }
-    $state.go('commentsNew', params)
+  /* Creates a comment in the database */
+  this.createComment = function () {
+    let params = $stateParams
+    params.discussion_id = _discussion.id
+
+    this.comment.$save(params, function () {
+      $state.go($state.current, {}, {reload: true})
+    })
   }
 }
 
+/* checks if an object is empty */
 function isEmpty (obj) {
   return angular.equals(obj, [])
 }
