@@ -9,8 +9,7 @@
       'home',
       'moments',
       'discussions',
-      'shuffle',
-      'dateChecker.service'
+      'shuffle'
     ])
 })()
 

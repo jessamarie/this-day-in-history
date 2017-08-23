@@ -4,11 +4,11 @@ angular
   .module('shuffle')
   .controller('ShuffleController', [
     '$state',
-    'dateChecker',
+    'momentHandler',
     ShuffleController
   ])
 
-function ShuffleController ($state, dateChecker) {
+function ShuffleController ($state, momentHandler) {
   this.today = new Date() // date object initialized with Today's date
   this.start = new Date(1900, 0, 0)
 
@@ -34,7 +34,7 @@ function ShuffleController ($state, dateChecker) {
     checks that an event exists that day
   */
   this.checkDate = function (self) {
-    dateChecker.check(this.randomDate).then(
+    momentHandler.check(this.randomDate).then(
         function (eventsExist) {
           if (eventsExist === false) {
             self.shuffle()
