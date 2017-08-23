@@ -1,18 +1,16 @@
-(function () {
-  'use strict'
+'use strict'
 
-  angular
-  .module('shuffle.directive', [])
-  .directive('shuffle', shuffle)
+angular
+.module('shuffle')
+.directive('shuffle', shuffle)
 
-  shuffle.$inject = []
+shuffle.$inject = []
 
-  function shuffle () {
-    return {
-      templateUrl: 'app/src/components/shuffle-button/shuffle.html',
-      restrict: 'E',
-      controller: 'ShuffleController',
-      controllerAs: 'shuffle'
-    }
-  } // end directive
-})()
+function shuffle () {
+  return {
+    templateUrl: 'app/src/components/shuffle-button/shuffle.html',
+    restrict: 'E',
+    controller: 'ShuffleController',
+    controllerAs: 'shuffle'
+  }
+} // end directive

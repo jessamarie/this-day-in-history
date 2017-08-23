@@ -31,8 +31,8 @@ DiscussionShowController.resolve = {
     return Discussion.get(date)
   },
 
-  _moments: function (dateChecker, $stateParams) {
-    return dateChecker.getMoments({
+  _moments: function (momentHandler, $stateParams) {
+    return momentHandler.getMoments({
       month: $stateParams.month,
       day: $stateParams.day,
       year: $stateParams.year

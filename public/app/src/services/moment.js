@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /*
   For our data we chose to use this API:
@@ -7,22 +7,19 @@
   which is based off the information found on wikipedia
 */
 
-(function () {
-  angular
-    .module('moments.service', [])
-    .factory('Moment', [
-      '$resource',
-      momentService
-    ])
+angular
+  .module('moments')
+  .factory('Moment', momentService)
 
-  function momentService ($resource) {
-    var url = 'http://history.muffinlabs.com/date/:month/:day'
+momentService.$inject = ['$resource']
 
-    return $resource(url, { callback: 'JSON_CALLBACK' }, {
-      get: {
-        method: 'JSONP',
-        isArray: false
-      }
-    })
-  }
-})()
+function momentService ($resource) {
+  var url = 'http://history.muffinlabs.com/date/:month/:day'
+
+  return $resource(url, { callback: 'JSON_CALLBACK' }, {
+    get: {
+      method: 'JSONP',
+      isArray: false
+    }
+  })
+}
