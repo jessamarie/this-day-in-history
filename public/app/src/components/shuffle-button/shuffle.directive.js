@@ -9,7 +9,7 @@
 
   function shuffle () {
     return {
-      templateUrl: 'src/components/shuffle-button/shuffle.html',
+      templateUrl: 'app/src/components/shuffle-button/shuffle.html',
       restrict: 'E',
       controller: 'ShuffleController',
       controllerAs: 'shuffle'
