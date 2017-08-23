@@ -6,4 +6,8 @@ angular
 
 HomeIndexController.$inject = []
 
-function HomeIndexController () {}
+function HomeIndexController () {
+  $(document).ready(function () {
+    $('.imgContainer').delay(1000).fadeIn(700)
+  })
+}
