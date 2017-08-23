@@ -14,6 +14,16 @@ function DiscussionShowController ($state, $stateParams, _discussion, _moments) 
   this.eventsExist = !this.isEmpty(this.moments.events) ||
                      !this.isEmpty(this.moments.births) ||
                      !this.isEmpty(this.moments.deaths)
+
+  this.newComment = function () {
+    let params = {
+      discussion_id: _discussion.id,
+      month: $stateParams.month,
+      day: $stateParams.day,
+      year: $stateParams.year
+    }
+    $state.go('commentsNew', params)
+  }
 }
 
 function isEmpty (obj) {

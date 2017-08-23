@@ -9,6 +9,7 @@
       'home',
       'moments',
       'discussions',
-      'shuffle'
+      'shuffle',
+      'comments'
     ])
 })()
