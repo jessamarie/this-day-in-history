@@ -1,0 +1,23 @@
+<div ng-show="vm.eventsExist">
+  <div ng-repeat="event in vm.moments.events">
+  <h2>Event: {{event.text}}</h2>
+  </div>
+
+  <div ng-repeat="event in vm.moments.births">
+  <h2>Birth: {{event.text}}</h2>
+  </div>
+
+  <div ng-repeat="event in vm.moments.deaths">
+  <h2>Death: {{event.text}}</h2>
+  </div>
+
+  <h3>Comments</h3>
+
+  <div ng-repeat="comment in vm.discussion.comments">
+    <h2>{{comment.text}}</h2>
+  </div>
+</div>
+
+<div ng-show="!vm.eventsExist">
+  Nothing significant happened on this date, Sorry!
+</div>

@@ -17,6 +17,7 @@
 
   function dateCheckerService (Moment) {
     var self = this
+    this.moments = {}
 
     this.filterByYear = function (object, year) {
       return object.filter((item) => { return item.year === year.toString() })
@@ -45,8 +46,27 @@
         )
     } // end check
 
+    function getMoments (date) {
+      // get all data for the specific date
+      return Moment.get({ month: date.month, day: date.day}).$promise.then(
+        function (data) {
+          self.moments.date = data.date
+          self.moments.url = data.url
+          self.moments.events = self.filterByYear(data.data.Events, date.year)
+          self.moments.births = self.filterByYear(data.data.Births, date.year)
+          self.moments.deaths = self.filterByYear(data.data.Deaths, date.year)
+
+          return self.moments
+        },
+        function (error) {
+          console.log(error)
+        }
+        )
+    }
+
     return {
-      check: check
+      check: check,
+      getMoments: getMoments
     }
   }
 })()

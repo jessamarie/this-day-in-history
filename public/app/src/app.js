@@ -1,6 +1,6 @@
-'use strict';
-
 (function () {
+  'use strict'
+
   angular
     .module('historyApp', [
       'ui.router',
@@ -8,6 +8,7 @@
       '720kb.datepicker',
       'home',
       'moments',
+      'discussions',
       'shuffle',
       'dateChecker.service'
     ])

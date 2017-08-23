@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821144509) do
+ActiveRecord::Schema.define(version: 20170823135629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170821144509) do
     t.string "year"
     t.string "month"
     t.string "day"
+    t.index ["month", "day", "year"], name: "index_discussions_on_month_and_day_and_year", unique: true
   end
 
 end

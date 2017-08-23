@@ -11,7 +11,8 @@
     ])
 
   function MomentShowController (Moment, $state, $stateParams) {
-    this.dateParams = {
+    this.dateParams = $stateParams
+    this.queryDateParams = {
       month: $stateParams.month,
       day: $stateParams.day
     }
@@ -30,7 +31,7 @@
      */
     function loadMoments (self) {
       // get all data for the specific date
-      return Moment.get(self.dateParams).$promise.then(
+      return Moment.get(self.queryDateParams).$promise.then(
           function (data) {
             self.date = data.date
             self.url = data.url
