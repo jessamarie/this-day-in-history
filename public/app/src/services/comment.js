@@ -8,7 +8,7 @@
 */
 
 angular
-  .module('comments')
+  .module('comments', [])
   .factory('Comment', commentService)
 
 commentService.$inject = ['$resource']
