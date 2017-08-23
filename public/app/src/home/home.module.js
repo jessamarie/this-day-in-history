@@ -1,9 +1,6 @@
-'use strict';
-
 (function () {
+  'use strict'
+
   angular
-    .module('home', [
-      'home.routes',
-      'home.controller.index'
-    ])
+    .module('home', [])
 })()

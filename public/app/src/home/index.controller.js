@@ -1,14 +1,9 @@
-'use strict';
+'use strict'
 
-(function () {
-  angular
-    .module('home.controller.index', [])
-    .controller('HomeIndexController', [
-      '$scope',
-      HomeIndexController
-    ])
+angular
+    .module('home')
+    .controller('HomeIndexController', HomeIndexController)
 
-  function HomeIndexController () {
+HomeIndexController.$inject = []
 
-  }
-})()
+function HomeIndexController () {}
