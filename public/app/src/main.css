@@ -25,3 +25,20 @@ html{
 body{
   margin: 0px;
 }
+
+.icon{
+  -webkit-transition: margin 0.2s ease-out;
+  -moz-transition: margin 0.2s ease-out;
+  -o-transition: margin 0.2s ease-out;
+  margin: 15px;
+
+  	height: 60px;
+  	width: 60px;
+  	margin-left: 25px;
+  	margin-right: 25px;
+    flex-grow: 1;
+}
+
+.icon:hover{
+  margin-top: 2px;
+}

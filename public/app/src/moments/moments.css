@@ -52,4 +52,13 @@ nav{
 #icon4{
   height: 55px;
   width: 55px;
+  -webkit-transition: margin 0.2s ease-out;
+  -moz-transition: margin 0.2s ease-out;
+  -o-transition: margin 0.2s ease-out;
+  margin: 15px;
+}
+
+
+#icon4:hover {
+  margin-top: 5px;
 }
