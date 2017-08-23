@@ -1,0 +1,44 @@
+._720kb-datepicker-calendar-day._720kb-datepicker-today {
+  background:red;
+  color:white;
+}
+
+html{
+  text-transform: lowercase;
+}
+
+.viewContainer {
+	display: flex;
+	align-items: center;
+  background:white;
+	flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+	height: 80vh;
+  margin: 0px;
+}
+
+.showContainer{
+  display: flex;
+	align-items: center;
+  justify-content: center;
+}
+body{
+  margin: 0px;
+}
+
+.icon{
+  -webkit-transition: margin 0.2s ease-out;
+  -moz-transition: margin 0.2s ease-out;
+  -o-transition: margin 0.2s ease-out;
+  margin: 15px;
+
+  	height: 60px;
+  	width: 60px;
+  	margin-left: 25px;
+  	margin-right: 25px;
+    flex-grow: 1;
+}
+
+.icon:hover{
+  margin-top: 2px;
+}
