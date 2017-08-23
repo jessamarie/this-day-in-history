@@ -4,11 +4,13 @@ angular
   .module('discussions')
   .controller('DiscussionShowController', DiscussionShowController)
 
-DiscussionShowController.$inject = ['$state', '$stateParams', '_discussion']
+DiscussionShowController.$inject = ['$state', '$stateParams', '_discussion', '_moments']
 
-function DiscussionShowController ($stateParams, _discussion) {
+function DiscussionShowController ($state, $stateParams, _discussion, _moments) {
   this.date = $stateParams
   this.discussion = _discussion
+  this.moments = _moments
+  console.log(this.moments)
   console.log(this.discussion)
   if (this.discussions === null) {
     this.create()
@@ -36,5 +38,13 @@ DiscussionShowController.resolve = {
     var data = Discussion.get(date)
     console.log(data)
     return Discussion.get(date)
+  },
+
+  _moments: function (dateChecker, $stateParams) {
+    return dateChecker.getMoments({
+      month: $stateParams.month,
+      day: $stateParams.day,
+      year: $stateParams.year
+    })
   }
 }
