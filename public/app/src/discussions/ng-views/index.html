@@ -1,4 +1,4 @@
 <h2>Recent Discussions</h2>
 <div ng-repeat="discussion in vm.discussions">
-  <p><a ui-sref="discussionsShow({ id: discussion.id })"> {{ vm.getDateString(discussion) }}</a></p>
+  <p><a ui-sref="discussionsShow({ month: discussion.month, day: discussion.day, year: discussion.year })"> {{ vm.getDateString(discussion) }}</a></p>
 </div>
