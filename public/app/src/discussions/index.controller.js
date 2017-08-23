@@ -8,6 +8,7 @@ DiscussionIndexController.$inject = ['_discussions']
 
 function DiscussionIndexController (_discussions) {
   this.discussions = _discussions
+
   this.getDateString = getDateString
 }
 
@@ -18,7 +19,7 @@ function DiscussionIndexController (_discussions) {
     i.e. March 27, 2010
   */
 function getDateString (discussion) {
-  var date = new Date(discussion.year, discussion.month, discussion.day)
+  var date = new Date(discussion.year, discussion.month - 1, discussion.day)
   var options = { year: 'numeric', month: 'long', day: 'numeric' }
   return date.toLocaleDateString('en-US', options)
 }
