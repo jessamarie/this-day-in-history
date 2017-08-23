@@ -4,12 +4,7 @@ class DiscussionsController < ApplicationController
     @discussions = Discussion.all
     render json: @discussions, include: :comments
   end
-
-  # # new
-  # def new
-  #   @discussion = Discussion.new
-  # end
-
+  
   # create
   def create
     @discussion = Discussion.create!(discussion_params)
@@ -21,28 +16,6 @@ class DiscussionsController < ApplicationController
     @discussion = Discussion.find_or_create_by(day: params[:day], year: params[:year], month: params[:month])
     render json: @discussion, include: :comments
   end
-
-  # # edit
-  # def edit
-  #   @discussion = Discussion.find(params[:id])
-  # end
-
-
-  # # update
-  # def update
-  #   @discussion = discussion.find(params[:id])
-  #   @discussion.update(discussion_params)
-  #
-  #   redirect_to discussion_path(@discussion), notice: "Discussion was successfully updated."
-  # end
-
-  # # destroy
-  # def destroy
-  #   @discussion = discussion.find(params[:id])
-  #   @discussion.destroy
-  #
-  #   redirect_to discussions_path
-  # end
 
   private
   def discussion_params
