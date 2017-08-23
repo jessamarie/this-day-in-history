@@ -2,15 +2,12 @@
 
 (function () {
   angular
-    .module('moments.controller.show', [])
-    .controller('MomentShowController', [
-      'Moment',
-      '$state',
-      '$stateParams',
-      MomentShowController
-    ])
+    .module('moments')
+    .controller('MomentShowController', MomentShowController)
 
-  function MomentShowController (Moment, $state, $stateParams) {
+  MomentShowController.$inject = ['Moment', '$stateParams']
+
+  function MomentShowController (Moment, $stateParams) {
     this.dateParams = $stateParams
     this.queryDateParams = {
       month: $stateParams.month,

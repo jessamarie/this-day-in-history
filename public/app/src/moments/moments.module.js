@@ -1,10 +1,6 @@
-'use strict';
-
 (function () {
+  'use strict'
+
   angular
-    .module('moments', [
-      'moments.routes',
-      'moments.service',
-      'moments.controller.show'
-    ])
+    .module('moments', [])
 })()
