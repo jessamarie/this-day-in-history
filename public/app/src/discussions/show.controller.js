@@ -12,8 +12,9 @@ function DiscussionShowController ($state, $stateParams, _discussion, _moments, 
   this.discussion = _discussion
   this.moments = _moments
   this.isEmpty = isEmpty
+  this.easterEgg = checkForEasterEgg(this.date.month, this.date.day, this.date.year)
   this.eventsExist = !this.isEmpty(this.moments.events) ||
-  !this.isEmpty(this.moments.births) || !this.isEmpty(this.moments.deaths)
+  !this.isEmpty(this.moments.births) || !this.isEmpty(this.moments.deaths) || this.easterEgg
 
   /* Creates a comment in the database */
   this.createComment = function () {
@@ -24,10 +25,23 @@ function DiscussionShowController ($state, $stateParams, _discussion, _moments, 
       $state.go($state.current, {}, {reload: true})
     })
   }
-  this.getDateString = function(date) {
+  this.getDateString = function (date) {
     var date = new Date(date.year, date.month - 1, date.day)
     var options = { year: 'numeric', month: 'long', day: 'numeric' }
     return date.toLocaleDateString('en-US', options)
+  }
+}
+
+function checkForEasterEgg (month, day, year) {
+  var eggs = easterEggs.filter((item) => {
+    return month === item.month && day === item.day && year === item.year
+  })
+
+  if (angular.equals(eggs, [])) {
+    return null
+  } else {
+    var person = eggs[0]
+    return `The Amazing ${person.name}, was a born on this very day.`
   }
 }
 

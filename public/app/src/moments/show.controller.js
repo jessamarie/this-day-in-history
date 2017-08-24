@@ -48,9 +48,9 @@
               } else if (!self.isEmpty(self.events)) {
                 self.randomEvent = self.events[Math.floor(Math.random() * self.events.length)].text
               } else if (!self.isEmpty(self.births)) {
-                self.randomEvent = self.births[Math.floor(Math.random() * self.births.length)].text
+                self.randomEvent = "Birth: " + self.births[Math.floor(Math.random() * self.births.length)].text
               } else if (!self.isEmpty(self.deaths)) {
-                self.randomEvent = self.deaths[Math.floor(Math.random() * self.deaths.length)].text
+                self.randomEvent = "Death: " + self.deaths[Math.floor(Math.random() * self.deaths.length)].text
               } else {
                 // no easterEggs or events
                 self.randomEvent = `${self.date}, ${self.year} was a very boring day.`
@@ -64,57 +64,6 @@
         )
     } // end load moments
   }
-
-  const easterEggs = [
-    {
-      name: 'Nobody Special', // patrick
-      month: '2',
-      day: '20',
-      year: '1994'
-    },
-    {
-      name: 'Mitche',
-      month: '4',
-      day: '5',
-      year: '1989'
-    },
-    {
-      name: 'Alex',
-      month: '7',
-      day: '3',
-      year: '1990'
-    },
-    {
-      name: 'Tim',
-      month: '8',
-      day: '24',
-      year: '1985'
-    },
-    {
-      name: 'Colleen',
-      month: '1',
-      day: '11',
-      year: '1985'
-    },
-    {
-      name: 'Jacob',
-      month: '8',
-      day: '28',
-      year: '1988'
-    },
-    {
-      name: 'JD',
-      month: '5',
-      day: '25',
-      year: '1986'
-    },
-    {
-      name: 'Charlie',
-      month: '11',
-      day: '6',
-      year: '1987'
-    }
-  ]
 
   function checkForEasterEgg (date, month, day, year) {
     var eggs = easterEggs.filter((item) => {

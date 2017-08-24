@@ -165,3 +165,7 @@ button{
 .floatIcon{
   float: left;
 }
+
+.easterEgg {
+  color: gray;
+}
