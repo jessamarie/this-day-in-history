@@ -6,12 +6,12 @@
 <div ng-show="search.searchClicked">
   <!-- Put date picker here maybe? It will only show when
   search.searchClicked=true (in search controller) -->
-  <form class="form-inline">
-    <label for="date-input" class="sr-only col-2 col-form-label">Date</label>
-    <div class="col-6">
-      <input class="form-control" type="date" value="2011-08-19" id="date-input" ng-model="search.dateInput">
-      <button name="submit" type="submit" class="btn btn-primary" ng-click="search.submit(search.dateInput)">Submit</button>
-      <button name = "cancel" type="button" class="btn btn-primary" ng-click="search.cancel()">Cancel</button>
+  <form class="" ng-submit="search.submit(search.dateInput)">
+    <label for="date-input" class="">Date</label>
+    <div class="">
+      <input type="date" value="2011-08-19" id="date-input" ng-model="search.dateInput">
+      <button name="submit" type="submit">Submit</button>
+      <button name = "cancel" type="button" data-ng-click="search.cancel()">Cancel</button>
     </div>
 </form>
 </div>
