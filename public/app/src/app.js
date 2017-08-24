@@ -1,8 +1,8 @@
 (function () {
   // local api route
-  api_route = 'http://localhost:3000'
+  // api_route = 'http://localhost:3000'
   // heroku api route
-  // api_route = 'http://name.heroku.com'
+  api_route = 'https://moments-project.herokuapp.com/'
   'use strict'
 
   angular
