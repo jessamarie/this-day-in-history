@@ -69,7 +69,7 @@
     {
       name: 'Frew',
       month: '5',
-      day: '25',
+      day: '5',
       year: '1976'
     },
     {
@@ -89,6 +89,12 @@
       month: '1',
       day: '13',
       year: '1987'
+    },
+    {
+      name: 'Matt',
+      month: '10',
+      day: '30',
+      year: '1991'
     }
   ]
 })()
