@@ -4,7 +4,10 @@
 }
 
 html{
-  text-transform: lowercase;
+  height: 100vh;
+}
+body{
+    height: 100vh;
 }
 
 .viewContainer {
@@ -41,4 +44,124 @@ body{
 
 .icon:hover{
   margin-top: 2px;
+}
+
+.icon2{
+  -webkit-transition: margin 0.2s ease-out;
+  -moz-transition: margin 0.2s ease-out;
+  -o-transition: margin 0.2s ease-out;
+  margin: 15px;
+
+  	height: 60px;
+  	width: 60px;
+  	margin-left: 25px;
+  	margin-right: 25px;
+    flex-grow: 1;
+}
+
+.icon2:hover{
+  margin-right: 2px;
+}
+
+.infoContainer{
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  overflow: auto;
+  padding: 10px;
+  width: 52vw;
+  font-size: 10px;
+}
+
+.commentContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50vw;
+  height: 40vh;
+  padding: 20px;
+  padding-top: 5px;
+  margin-top: 5px;
+}
+
+.commentSection{
+  height: 40vh;
+  overflow: auto;
+  width: 40vw;
+  padding: 10px;
+  margin: 10px;
+  font-size: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.totalContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#commentTitle{
+  height: 5vh;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-decoration: underline;
+}
+
+.sideBySide{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 80vw;
+}
+
+.imgContainer2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 10px;
+  width: 10vh;
+}
+
+.showNav{
+  display: flex;
+}
+
+.indexContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  overflow: auto;
+  flex-direction: column;
+}
+#indexInfo{
+  color: black;
+  text-decoration: none;
+}
+
+#indexInfo:hover{
+  text-decoration: underline;
+}
+
+#textArea{
+  border: 1px solid black;
+  color: black;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+button{
+  margin: 10px;
+}
+.floatIcon{
+  float: left;
 }

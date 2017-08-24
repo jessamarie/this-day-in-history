@@ -20,18 +20,17 @@ function SearchController ($state) {
 
   this.submit = function (date) {
     if (date) {
-      console.log(date);
       var params = {
         month: date.getMonth() + 1,
         day: date.getDay() + 1,
         year: date.getFullYear()
       }
-      console.log(params)
+      this.cancel()
       $state.go('momentShow', params)
     }
   }
 
-  this.cancel = function (input) {
+  this.cancel = function () {
     this.searchClicked = false
     $('.imgContainer form').hide()
     $('#icon1, #icon2, #icon3').show()

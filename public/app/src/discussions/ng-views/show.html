@@ -1,33 +1,44 @@
-<div ng-show="vm.eventsExist">
-  <div ng-repeat="event in vm.moments.events">
-  <h2>Event: {{event.text}}</h2>
+    <img class="floatIcon"data-ui-sref="home" id="icon4" src="http://i.imgur.com/quOQCel.jpg" alt="">
+<div class="totalContainer">
+  <div class="show">
+    <h2 id="showDate">{{ vm.getDateString(vm.date) }}</h2>
   </div>
-
-  <div ng-repeat="event in vm.moments.births">
-  <h2>Birth: {{event.text}}</h2>
+  <div class="infoContainer">
+    <div ng-show="vm.eventsExist">
+      <div ng-repeat="event in vm.moments.events">
+        <h2>Event: {{event.text}}</h2>
+      </div>
+      <div ng-repeat="event in vm.moments.births">
+        <h2>Birth: {{event.text}}</h2>
+      </div>
+      <div ng-repeat="event in vm.moments.deaths">
+        <h2>Death: {{event.text}}</h2>
+      </div>
+    </div>
   </div>
+    <div class="commentContainer">
+      <h3 id="commentTitle">Comments</h3>
+      <div class="commentSection">
+        <div class="comment"ng-repeat="comment in vm.discussion.comments">
+          <h2>{{comment.text}}</h2>
+        </div>
+      </div>
+      <div ng-show="!vm.eventsExist">
+        Nothing significant happened on this date, Sorry!
+      </div>
+      <textarea id="textArea"placeholder="Comment"
+                data-ng-model="vm.comment.text"
+                name="name"
+                rows="8"
+                cols="80">
+      </textarea>
+      <button type="button" name="button" ng-click="vm.createComment()">Add Comment</button>
+    </div>
+    <div class= "imgContainer" >
+      <img ng-click="" class ="icon" id="icon1" src= "http://i.imgur.com/78SxM9U.png" alt="">
+      <shuffle></shuffle>
+      <img data-ui-sref="discussionsIndex" ng-click="" class ="icon" id="icon3" src="http://i.imgur.com/HEySeBM.jpg" alt="">
+    </div>
 
-  <div ng-repeat="event in vm.moments.deaths">
-  <h2>Death: {{event.text}}</h2>
   </div>
-
-  <h3>Comments</h3>
-
-
-  <textarea placeholder="Comment goes here"
-            data-ng-model="vm.comment.text"
-            name="name"
-            rows="8"
-            cols="80">
-  </textarea>
-
-  <button type="button" name="button" ng-click="vm.createComment()">Add Comment</button>
-
-  <div ng-repeat="comment in vm.discussion.comments">
-    <h2>{{comment.text}}</h2>
   </div>
-</div>
-
-<div ng-show="!vm.eventsExist">
-  Nothing significant happened on this date, Sorry!
-</div>
