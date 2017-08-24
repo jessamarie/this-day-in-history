@@ -1,4 +1,4 @@
-<img ng-click="search.showDatePicker()"
+<img ng-click="search.open()"
      class ="icon" id="icon1"
      src= "http://i.imgur.com/78SxM9U.png"
      alt="Search for Date Button">
@@ -6,4 +6,12 @@
 <div ng-show="search.searchClicked">
   <!-- Put date picker here maybe? It will only show when
   search.searchClicked=true (in search controller) -->
+  <form class="form-inline">
+    <label for="date-input" class="sr-only col-2 col-form-label">Date</label>
+    <div class="col-6">
+      <input class="form-control" type="date" value="2011-08-19" id="date-input" ng-model="search.dateInput">
+      <button name="submit" type="submit" class="btn btn-primary" ng-click="search.submit(search.dateInput)">Submit</button>
+      <button name = "cancel" type="button" class="btn btn-primary" ng-click="search.cancel()">Cancel</button>
+    </div>
+</form>
 </div>

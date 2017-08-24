@@ -12,7 +12,28 @@ function SearchController ($state) {
 
   this.searchClicked = false
 
-  this.showDatePicker = function () {
-    console.log(this.searchClicked)
+  this.open = function () {
+    this.searchClicked = !this.searchClicked
+    $('#icon1, #icon2, #icon3').hide()
+    $('.imgContainer form').show()
+  }
+
+  this.submit = function (date) {
+    if (date) {
+      console.log(date);
+      var params = {
+        month: date.getMonth() + 1,
+        day: date.getDay() + 1,
+        year: date.getFullYear()
+      }
+      console.log(params)
+      $state.go('momentShow', params)
+    }
+  }
+
+  this.cancel = function (input) {
+    this.searchClicked = false
+    $('.imgContainer form').hide()
+    $('#icon1, #icon2, #icon3').show()
   }
 } // end controller
