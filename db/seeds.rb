@@ -50,3 +50,6 @@ liz.comments.create(text: "This day was Liz's Birthday!")
 
 matt = Discussion.create!(year: "1991", month: "10", day: "30")
 matt.comments.create(text: "This day was Matt's Birthday!")
+
+kendall = Discussion.create!(year: "1990", month: "4", day: "15")
+kendall.comments.create(text: "This day was Kendall's Birthday!")

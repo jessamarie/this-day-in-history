@@ -95,6 +95,12 @@
       month: '10',
       day: '30',
       year: '1991'
+    },
+    {
+      name: 'Kendall',
+      month: '4',
+      day: '15',
+      year: '1990'
     }
   ]
 })()
