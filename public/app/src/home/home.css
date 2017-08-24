@@ -1,5 +1,5 @@
 :root {
-	--animation-delay: 1s;
+	--animation-delay: .1s;
 	--duration: 1500ms;
 	--iterations: 1;
 }
@@ -9,11 +9,11 @@
 	justify-content: center;
 	text-align: center;
 	flex-direction: row;
-	height: 30vh;
+	height: 10vh;
 	padding: 10px;
 }
-.reveal-text,
-.reveal-text::after {
+#reveal-text,
+#reveal-text::after {
 	animation-delay: var(--animation-delay);
 	animation-iteration-count: var(--iterations);
 	animation-duration: var(--duration);
@@ -21,7 +21,7 @@
 	animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
 }
 
-.reveal-text {
+#reveal-text {
 	position: relative;
 	font-size: 110px;
 	display: block;

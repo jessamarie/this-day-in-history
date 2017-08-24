@@ -7,6 +7,7 @@ angular
 DiscussionShowController.$inject = ['$state', '$stateParams', '_discussion', '_moments', 'Comment']
 
 function DiscussionShowController ($state, $stateParams, _discussion, _moments, Comment) {
+  this.date = $stateParams
   this.comment = new Comment()
   this.discussion = _discussion
   this.moments = _moments
@@ -22,6 +23,11 @@ function DiscussionShowController ($state, $stateParams, _discussion, _moments, 
     this.comment.$save(params, function () {
       $state.go($state.current, {}, {reload: true})
     })
+  }
+  this.getDateString = function(date) {
+    var date = new Date(date.year, date.month - 1, date.day)
+    var options = { year: 'numeric', month: 'long', day: 'numeric' }
+    return date.toLocaleDateString('en-US', options)
   }
 }
 
