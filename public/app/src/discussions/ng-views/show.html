@@ -1,4 +1,4 @@
-
+    <img class="floatIcon"data-ui-sref="home" id="icon4" src="http://i.imgur.com/quOQCel.jpg" alt="">
 <div class="totalContainer">
   <div class="show">
     <h2 id="showDate">{{ vm.getDateString(vm.date) }}</h2>
@@ -26,7 +26,7 @@
       <div ng-show="!vm.eventsExist">
         Nothing significant happened on this date, Sorry!
       </div>
-      <textarea placeholder="Comment"
+      <textarea id="textArea"placeholder="Comment"
                 data-ng-model="vm.comment.text"
                 name="name"
                 rows="8"
