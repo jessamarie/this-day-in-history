@@ -14,6 +14,7 @@
       day: $stateParams.day
     }
 
+
     this.year = $stateParams.year
 
     loadMoments(this)

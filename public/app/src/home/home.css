@@ -1,5 +1,5 @@
 :root {
-	--animation-delay: .4s;
+	--animation-delay: .1s;
 	--duration: 1500ms;
 	--iterations: 1;
 }
@@ -9,7 +9,7 @@
 	justify-content: center;
 	text-align: center;
 	flex-direction: row;
-	height: 30vh;
+	height: 10vh;
 	padding: 10px;
 }
 #reveal-text,

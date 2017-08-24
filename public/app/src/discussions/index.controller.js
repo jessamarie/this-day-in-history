@@ -8,7 +8,6 @@ DiscussionIndexController.$inject = ['_discussions']
 
 function DiscussionIndexController (_discussions) {
   this.discussions = _discussions
-
   this.getDateString = getDateString
 }
 
