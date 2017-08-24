@@ -1,8 +1,10 @@
-
+  <img class="floatIcon"data-ui-sref="home" id="icon4" src="http://i.imgur.com/quOQCel.jpg" alt="">
 <div class="viewContainer">
   <h2>Discussions</h2>
-  <div ng-repeat="discussion in vm.discussions">
-    <p><a ui-sref="discussionsShow({ month: discussion.month, day: discussion.day, year: discussion.year })"> {{ vm.getDateString(discussion) }}</a></p>
+  <div class="indexContainer">
+    <div ng-repeat="discussion in vm.discussions">
+      <p><a id="indexInfo" ui-sref="discussionsShow({ month: discussion.month, day: discussion.day, year: discussion.year })"> {{ vm.getDateString(discussion) }}</a></p>
+    </div>
   </div>
   <div class= "imgContainer" >
     <img ng-click="" class ="icon" id="icon1" src= "http://i.imgur.com/78SxM9U.png" alt="">

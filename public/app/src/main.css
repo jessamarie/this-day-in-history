@@ -4,7 +4,6 @@
 }
 
 html{
-  text-transform: lowercase;
   height: 100vh;
 }
 body{
@@ -84,7 +83,6 @@ body{
   padding: 20px;
   padding-top: 5px;
   margin-top: 5px;
-  margin-left: 15px;
 }
 
 .commentSection{
@@ -134,4 +132,36 @@ body{
 
 .showNav{
   display: flex;
+}
+
+.indexContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  overflow: auto;
+  flex-direction: column;
+}
+#indexInfo{
+  color: black;
+  text-decoration: none;
+}
+
+#indexInfo:hover{
+  text-decoration: underline;
+}
+
+#textArea{
+  border: 1px solid black;
+  color: black;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+button{
+  margin: 10px;
+}
+.floatIcon{
+  float: left;
 }
