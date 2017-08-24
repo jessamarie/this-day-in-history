@@ -4,7 +4,10 @@
     <h2 id="showDate">{{ vm.getDateString(vm.date) }}</h2>
   </div>
   <div class="infoContainer">
-    <div ng-show="vm.eventsExist">
+    <div>
+      <div class="easterEgg" ng-show="vm.easterEgg">
+        <h2>Special: {{vm.easterEgg}}</h2>
+      </div>
       <div ng-repeat="event in vm.moments.events">
         <h2>Event: {{event.text}}</h2>
       </div>
@@ -24,7 +27,7 @@
         </div>
       </div>
       <div ng-show="!vm.eventsExist">
-        Nothing significant happened on this date, Sorry!
+        Nothing significant happened on this date, but go ahead and discuss it anyway!
       </div>
       <textarea id="textArea"placeholder="Comment"
                 data-ng-model="vm.comment.text"
@@ -35,7 +38,7 @@
       <button type="button" name="button" ng-click="vm.createComment()">Add Comment</button>
     </div>
     <div class= "imgContainer" >
-      <img ng-click="" class ="icon" id="icon1" src= "http://i.imgur.com/78SxM9U.png" alt="">
+      <search></search>
       <shuffle></shuffle>
       <img data-ui-sref="discussionsIndex" ng-click="" class ="icon" id="icon3" src="http://i.imgur.com/HEySeBM.jpg" alt="">
     </div>

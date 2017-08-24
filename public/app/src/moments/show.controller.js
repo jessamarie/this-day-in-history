@@ -14,7 +14,6 @@
       day: $stateParams.day
     }
 
-
     this.year = $stateParams.year
 
     loadMoments(this)
@@ -43,14 +42,18 @@
 
             /* sets a random event that occured on this day */
             self.getRandomEvent = function () {
-              if (!self.isEmpty(self.events)) {
-                self.randomEvent = self.events[Math.floor(Math.random() * self.events.length)]
+              self.randomEvent = checkForEasterEgg(self.date, self.dateParams.month, self.dateParams.day, self.year)
+              if (self.randomEvent !== null) {
+                // do nothing, we have an easter egg
+              } else if (!self.isEmpty(self.events)) {
+                self.randomEvent = self.events[Math.floor(Math.random() * self.events.length)].text
               } else if (!self.isEmpty(self.births)) {
-                self.randomEvent = self.births[Math.floor(Math.random() * self.births.length)]
+                self.randomEvent = "Birth: " + self.births[Math.floor(Math.random() * self.births.length)].text
               } else if (!self.isEmpty(self.deaths)) {
-                self.randomEvent = self.deaths[Math.floor(Math.random() * self.deaths.length)]
+                self.randomEvent = "Death: " + self.deaths[Math.floor(Math.random() * self.deaths.length)].text
               } else {
-                console.log('There shoud be sth here')
+                // no easterEggs or events
+                self.randomEvent = `${self.date}, ${self.year} was a very boring day.`
               }
             } // end get random event
             self.getRandomEvent()
@@ -60,5 +63,18 @@
           }
         )
     } // end load moments
+  }
+
+  function checkForEasterEgg (date, month, day, year) {
+    var eggs = easterEggs.filter((item) => {
+      return month === item.month && day === item.day && year === item.year
+    })
+
+    if (angular.equals(eggs, [])) {
+      return null
+    } else {
+      var person = eggs[0]
+      return `${person.name}, was a born on this very day.`
+    }
   }
 })()

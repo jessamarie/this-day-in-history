@@ -16,8 +16,9 @@ body{
   background:white;
 	flex-direction: column;
   font-family: 'Poppins', sans-serif;
-	height: 80vh;
+	height: 70vh;
   margin: 0px;
+  height: 80vh;
 }
 
 .showContainer{
@@ -138,9 +139,10 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 50vh;
   overflow: auto;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 #indexInfo{
   color: black;
@@ -152,16 +154,50 @@ body{
 }
 
 #textArea{
-  border: 1px solid black;
+  border: 2px solid black;
   color: black;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  outline-color: grey;
 }
 
 button{
   margin: 10px;
+  border: 2px solid black;
+  color: black;
+  height: 35px;
+  background-color: white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  outline-color: grey;
+  transition: all .1s ease-in;
 }
+
+button:hover {
+  letter-spacing: 2px;
+}
+
 .floatIcon{
   float: left;
+}
+
+.searchForm{
+  border: 2px solid black;
+  color: black;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  height: 20px;
+  transition: all .1s ease-in;
+  outline-color: grey;
+}
+
+.searchForm:hover {
+  letter-spacing: 2px;
+}
+
+.easterEgg {
+  color: gray;
 }
