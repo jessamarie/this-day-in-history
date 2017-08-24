@@ -50,7 +50,10 @@
               } else if (!self.isEmpty(self.deaths)) {
                 self.randomEvent = self.deaths[Math.floor(Math.random() * self.deaths.length)]
               } else {
-                console.log('There shoud be sth here')
+                self.randomEvent = {
+                  text: `${self.date}, ${self.year} was a very boring day.`,
+                  year: self.year
+                }
               }
             } // end get random event
             self.getRandomEvent()
