@@ -1,14 +1,18 @@
-  <img class="floatIcon"data-ui-sref="home" id="icon4" src="http://i.imgur.com/quOQCel.jpg" alt="">
-<div class="viewContainer">
-  <h2>Discussions</h2>
-  <div class="indexContainer">
-    <div ng-repeat="discussion in vm.discussions">
-      <p><a id="indexInfo" ui-sref="discussionsShow({ month: discussion.month, day: discussion.day, year: discussion.year })"> {{ vm.getDateString(discussion) }}</a></p>
+<div class="addLogo">
+      <span>m</span>
+    <div class="pageContainer2">
+      <div class="dateContainer">
+        <h1 class="showDate">Events</h1>
+      </div>
+      <div class="infoContainer">
+        <div ng-repeat="discussion in vm.discussions">
+          <p><a id="indexInfo" ui-sref="discussionsShow({ month: discussion.month, day: discussion.day, year: discussion.year })"> {{ vm.getDateString(discussion) }}</a></p>
+        </div>
+      </div>
+      <div class= "imgContainer2">
+        <i id="icon1" class="fa fa-search fa-4x" aria-hidden="true"></i>
+        <i id="icon2" class="fa fa-random fa-4x"  aria-hidden="true"></i>
+        <i id="icon3" class="fa fa-commenting-o fa-4x" aria-hidden="true"></i>
+      </div>
     </div>
   </div>
-  <div class= "imgContainer" >
-    <search></search>
-    <shuffle></shuffle>
-    <img data-ui-sref="discussionsIndex" ng-click="" class ="icon" id="icon3" src="http://i.imgur.com/HEySeBM.jpg" alt="">
-  </div>
-</div>
