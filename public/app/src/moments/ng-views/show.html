@@ -1,15 +1,16 @@
-<nav>
-  <img data-ui-sref="home" id="icon4" src="http://i.imgur.com/quOQCel.jpg" alt="">
-</nav>
-
-<div class="viewContainer">
-  <div class="showContainer">
-    <h2 id="showDate">{{vm.date}} {{vm.year}} </h2>
-    <h3 id ="showInfo">{{vm.randomEvent}}</h3>
-    <div class= "imgContainerQuick">
-      <search></search>
-      <shuffle></shuffle>
-      <img data-ui-sref="discussionsShow(vm.dateParams)" ng-click="" class ="icon" id="icon3" src="http://i.imgur.com/HEySeBM.jpg" alt="">
+<div class="addLogo">
+      <span>m</span>
+      <div class="pageContainer2">
+        <div class="dateContainer">
+          <h1 class="showDate">{{vm.date}} {{vm.year}} </h1>
+        </div>
+        <div class="infoContainer">
+          <h4 id ="showInfo">{{vm.randomEvent}}</h4>
+        </div>
+        <div class= "imgContainer2">
+          <i id="icon1" class="fa fa-search fa-4x" aria-hidden="true"></i>
+          <i id="icon2" class="fa fa-random fa-4x"  aria-hidden="true"></i>
+          <i id="icon3" class="fa fa-commenting-o fa-4x" aria-hidden="true"></i>
+        </div>
+      </div>
     </div>
-  </div>
-</div>

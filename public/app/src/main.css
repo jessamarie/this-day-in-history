@@ -1,203 +1,339 @@
 ._720kb-datepicker-calendar-day._720kb-datepicker-today {
   background:red;
-  color:white;
+  color: white;
 }
 
-html{
-  height: 100vh;
-}
 body{
-    height: 100vh;
+  height: 100vh;
+  font-family: "Poppins";
+  background-color:#26A9E1;
+  margin: 0px;
+  color: white;
 }
-
-.viewContainer {
+.pageContainer{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.imgContainer{
+  padding-top: 5vh;
 	display: flex;
 	align-items: center;
-  background:white;
-	flex-direction: column;
-  font-family: 'Poppins', sans-serif;
-	height: 70vh;
-  margin: 0px;
-  height: 80vh;
+	justify-content: center;
+	flex-direction: row;
+  display: none;
+  height: 20vh;
 }
-
-.showContainer{
+.revealContainer{
+  height: 40vh;
   display: flex;
 	align-items: center;
-  justify-content: center;
+	justify-content: center;
 }
-body{
+.textChanger{
   margin: 0px;
+  -webkit-transition: color 1s ease-out;
+  -moz-transition: color 1s ease-out;
+  -o-transition: color 1s ease-out;
+  transition: color 1s ease-out;
+  color: white;
+}
+.textChanger:hover{
+  color: black
 }
 
-.icon{
-  -webkit-transition: margin 0.2s ease-out;
-  -moz-transition: margin 0.2s ease-out;
-  -o-transition: margin 0.2s ease-out;
-  margin: 15px;
+#icon1{
+  margin-left: 5vw;
+  margin-right: 5vw;
+  color: white;
 
-  	height: 60px;
-  	width: 60px;
-  	margin-left: 25px;
-  	margin-right: 25px;
-    flex-grow: 1;
 }
+#icon2{
+  margin-left: 5vw;
+  margin-right: 5vw;
+  color: white;
 
-.icon:hover{
-  margin-top: 2px;
 }
-
-.icon2{
-  -webkit-transition: margin 0.2s ease-out;
-  -moz-transition: margin 0.2s ease-out;
-  -o-transition: margin 0.2s ease-out;
-  margin: 15px;
-
-  	height: 60px;
-  	width: 60px;
-  	margin-left: 25px;
-  	margin-right: 25px;
-    flex-grow: 1;
+#icon3{
+  margin-left: 5vw;
+  margin-right: 5vw;
+  color: white;
 }
-
-.icon2:hover{
-  margin-right: 2px;
+#icon1:hover{
+  -webkit-transition: color .75s ease-out;
+  -moz-transition: color .75s ease-out;
+  -o-transition: color .75s ease-out;
+  transition: color .75s ease-out;
+  color:black;
 }
-
-.infoContainer{
-  display: flex;
-  justify-content: center;
-  height: 20vh;
-  overflow: auto;
-  padding: 10px;
-  width: 52vw;
-  font-size: 10px;
+#icon2:hover{
+  -webkit-transition: color .75s ease-out;
+  -moz-transition: color .75s ease-out;
+  -o-transition: color .75s ease-out;
+  transition: color .75s ease-out;
+  color:black;
 }
-
-.commentContainer{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 50vw;
-  height: 40vh;
-  padding: 20px;
-  padding-top: 5px;
-  margin-top: 5px;
+#icon3:hover{
+  -webkit-transition: color .75s ease-out;
+  -moz-transition: color .75s ease-out;
+  -o-transition: color .75s ease-out;
+  transition: color .75s ease-out;
+  color:black;
 }
-
-.commentSection{
-  height: 40vh;
-  overflow: auto;
-  width: 40vw;
-  padding: 10px;
-  margin: 10px;
-  font-size: 10px;
-  padding-left: 0px;
-  padding-right: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
+.showDate{
+  color: white;
 }
-
-.totalContainer{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.showDate:hover{
+  -webkit-transition: color .75s ease-out;
+  -moz-transition: color .75s ease-out;
+  -o-transition: color .75s ease-out;
+  transition: color .75s ease-out;
+  color:black;
 }
+/*
+  shuffle.html
+*/
 
-#commentTitle{
-  height: 5vh;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  text-decoration: underline;
-}
-
-.sideBySide{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  width: 80vw;
-}
 
 .imgContainer2{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+  height: 20vh;
+}
+.imgContainerHide{
+  display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+  height: 20vh;
+  display: none;
+}
+
+.pageContainer2{
+  height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-between;
   flex-direction: column;
-  padding: 10px;
-  width: 10vh;
 }
 
-.showNav{
-  display: flex;
+/*
+  moments scripts
+*/
+:root {
+	--animation-delay: 1s;
+	--duration: 2000ms;
+	--iterations: 1;
+}
+#reveal-text,
+#reveal-text::after {
+	animation-delay: var(--animation-delay);
+	animation-iteration-count: var(--iterations);
+	animation-duration: var(--duration);
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
 }
 
-.indexContainer{
+#reveal-text {
+	position: relative;
+	font-size: 110px;
+	display: block;
+	animation-name: reveal-text;
+	margin: 0px;
+
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		transform: scaleX(0);
+		transform-origin: 0 50%;
+		pointer-events: none;
+		animation-name: revealer-text;
+	}
+
+}
+
+/*
+  animation: from % of text to %of text
+*/
+@keyframes reveal-text {
+	from {
+		clip-path: inset(0 100% 0 0);
+	}
+	to {
+		clip-path: inset(0 0 0 0);
+	}
+}
+
+
+@keyframes revealer-text {
+
+	0%, 50% {
+		transform-origin: 0 50%;
+	}
+
+	60%, 100% {
+		transform-origin: 100% 50%;
+	}
+
+
+	60% {
+		transform: scaleX(1);
+	}
+
+	100% {
+		transform: scaleX(0);
+	}
+}
+
+
+
+/*
+  comment index
+*/
+.infoContainer{
+  height: 60vh;
+  width: 60vw;
+  background-color: #25a4d9;
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
-  height: 50vh;
   overflow: auto;
   flex-direction: column;
-  margin-bottom: 20px;
-}
-#indexInfo{
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
-#indexInfo:hover{
-  text-decoration: underline;
+
+/*
+  discussions show
+*/
+.discussionCommentContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.discussionsInfo{
+  width: 40vw;
+  height: 60vh;
+  background-color: #25a4d9;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
-#textArea{
-  border: 2px solid black;
-  color: black;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  outline-color: grey;
+.discussionsComments{
+  width: 40vw;
+  height: 60vh;
+  background-color: #25a4d9;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
-button{
+.eventsText{
+  width: 39vw;
+  height: 40vw;
+  background-color: #25a4d9;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
   margin: 10px;
-  border: 2px solid black;
+  margin-right: 0px;
+}
+.discussionsText{
+  width: 39vw;
+  height: 40vw;
+  background-color: #25a4d9;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  margin: 10px;
+  margin-right: 0px;
+}
+#sectionTitle{
+  text-align: center;
+  border-bottom: 1px solid white;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+#indexInfo{
+  color: white;
+  text-decoration: none;
+}
+
+/*
+  media query
+*/
+
+span {
+    display: block;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    -moz-border-radius: 30px; /* or 50% */
+    border-radius: 30px; /* or 50% */
+    -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+    transition: width 2s, height 2s, transform 2s;
+    background-color: white;
+    color: #25a4d9;
+    text-align: center;
+    font-size: 2em;
+}
+
+span:hover{
   color: black;
-  height: 35px;
-  background-color: white;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  outline-color: grey;
-  transition: all .1s ease-in;
+  -webkit-transform: rotate(360deg); /* Safari */
+  transform: rotate(360deg);
 }
 
-button:hover {
-  letter-spacing: 2px;
+.addLogo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.floatIcon{
-  float: left;
-}
+@media screen and (max-width: 750px){
 
-.searchForm{
-  border: 2px solid black;
-  color: black;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  height: 20px;
-  transition: all .1s ease-in;
-  outline-color: grey;
-}
+  .discussionCommentContainer{
+    flex-direction: column;
+  }
 
-.searchForm:hover {
-  letter-spacing: 2px;
-}
+  .discussionsComments{
+    width: 95vw;
+  }
 
-.easterEgg {
-  color: gray;
+  .discussionsInfo{
+    width: 95vw;
+  }
+
+  .eventsText{
+    width: 93vw;
+  }
+  .discussionsText{
+    width: 93vw;
+  }
+  span{
+    display: none;
+  }
+
+.infoContainer  {
+  width: 95vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
 }
