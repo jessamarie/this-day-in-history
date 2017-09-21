@@ -10,6 +10,9 @@ function shuffle () {
   return {
     templateUrl: 'app/src/components/shuffle-button/shuffle.html',
     restrict: 'E',
+    scope: {
+      size: '@'
+    },
     controller: 'ShuffleController',
     controllerAs: 'shuffle'
   }
