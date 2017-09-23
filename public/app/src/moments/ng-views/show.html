@@ -2,10 +2,27 @@
       <span>m</span>
       <div class="pageContainer2">
         <div class="dateContainer">
-          <h1 class="showDate">{{vm.date}} {{vm.year}} </h1>
+          <h1 class="showDate">{{vm.moments.date}} {{vm.year}} </h1>
         </div>
         <div class="infoContainer">
-          <h4 id ="showInfo">{{vm.randomEvent}}</h4>
+          <p id="sectionTitle">Events</p>
+          <div class="eventsText">
+            <div class="noEvents" ng-show="vm.boringDay">
+              <h2>{{vm.boringDay}}</h2>
+            </div>
+            <div class="easterEgg" ng-show="vm.easterEgg">
+              <h2>Special: {{vm.easterEgg}}</h2>
+            </div>
+            <div ng-repeat="event in vm.moments.events">
+              <h2>Events: {{event.text}}</h2>
+            </div>
+            <div ng-repeat="event in vm.moments.births">
+              <h2>Birth: {{event.text}}</h2>
+            </div>
+            <div ng-repeat="event in vm.moments.deaths">
+              <h2>Death: {{event.text}}</h2>
+            </div>
+          </div>
         </div>
         <div class="imgContainer2">
           <search size="fa-4x"></search>
