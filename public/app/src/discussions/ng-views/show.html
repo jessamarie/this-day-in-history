@@ -35,7 +35,25 @@
       <div class="imgContainer2">
         <search size="fa-4x"></search>
         <shuffle size="fa-4x"></shuffle>
-        <i id="icon3" data-ui-sref="discussionsIndex" class="fa fa-commenting-o fa-4x" aria-hidden="true"></i>
+        <i id="icon3"
+           class="fa fa-commenting-o fa-4x"
+           aria-hidden="true"
+           ng-click="vm.showCommentBox()"></i>
+
+        <div ng-show="vm.viewCommentBox">
+          <form ng-submit="vm.createComment()">
+            <div>
+              <textarea id="textArea"placeholder="type in a comment"
+                        data-ng-model="vm.comment.text"
+                        name="comment"
+                        rows="8"
+                        cols="80">
+              </textarea>
+              <button name="submit" type="submit">Submit</button>
+              <button name="cancel" type="button" data-ng-click="vm.cancelComment()">Cancel</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
