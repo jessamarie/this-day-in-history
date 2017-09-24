@@ -7,6 +7,11 @@ angular
 MomentShowController.$inject = ['Moment', '$stateParams', '_moments']
 
 function MomentShowController (Moment, $stateParams, _moments) {
+  this.dateParams = {
+    month: $stateParams.month,
+    day: $stateParams.day,
+    year: $stateParams.year
+  }
   this.moments = _moments
   this.year = $stateParams.year
 
