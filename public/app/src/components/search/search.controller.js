@@ -16,7 +16,6 @@ function SearchController ($state) {
   this.open = function () {
     this.searchClicked = !this.searchClicked
     $('#icon1, #icon2, #icon3').hide()
-    $('.imgContainer form').show()
   }
 
   /* goes to the requested date */
@@ -39,7 +38,6 @@ function SearchController ($state) {
   **/
   this.cancel = function () {
     this.searchClicked = false
-    $('.imgContainer form').hide()
     $('#icon1, #icon2, #icon3').show()
   }
 } // end controller

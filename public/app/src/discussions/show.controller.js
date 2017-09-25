@@ -16,6 +16,22 @@ function DiscussionShowController ($state, $stateParams, _discussion, _moments, 
   this.eventsExist = !this.isEmpty(this.moments.events) ||
   !this.isEmpty(this.moments.births) || !this.isEmpty(this.moments.deaths) || this.easterEgg
 
+  this.viewCommentBox = false
+
+  /* opens the comment text area */
+  this.showCommentBox = function () {
+    this.viewCommentBox = !this.viewCommentBox
+    $('#icon1, #icon2, #icon3').hide()
+  }
+
+  /** cancel returns the user
+    to the options view
+  **/
+  this.cancelComment = function () {
+    this.viewCommentBox = false
+    $('#icon1, #icon2, #icon3').show()
+  }
+
   /* Creates a comment in the database */
   this.createComment = function () {
     let params = $stateParams
@@ -25,6 +41,7 @@ function DiscussionShowController ($state, $stateParams, _discussion, _moments, 
       $state.go($state.current, {}, {reload: true})
     })
   }
+
   this.getDateString = function (date) {
     var date = new Date(date.year, date.month - 1, date.day)
     var options = { year: 'numeric', month: 'long', day: 'numeric' }
